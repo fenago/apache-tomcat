@@ -662,13 +662,7 @@ server. There are some switches which are commonly used with
 the` jstack` command, as mentioned in the following
 table:
 
-
-  Options           Description
-  ----------------- ---------------------------------------------------------------------------------------
-  `-f`   Generates a Java stack forcefully. Majorly used when the process is in the hang state
-  `-l`   Long listing (displays the additional information on locks)
-  `-m`   Mixed mode Java stack generation
-
+![](./images/17.PNG)
 
 The following command syntax generates a Java stack for a Java process
 and redirects the output in a text file:

@@ -162,19 +162,7 @@ and why they are configured. The following table shows the basic
 monitors, which are normally configured for web application and database
 servers:
 
-
-  Monitored component         Benefit                                                            Web server   Application server                        Database server
-  --------------------------- ------------------------------------------------------------------ ------------ ----------------------------------------- -----------------
-  CPU                         Proactive measure to identify system issues                        Yes          Yes                                       Yes
-  Physical Memory (RAM)       Proactive measure to identify system issues                        Yes          Yes                                       Yes
-  JVM                         Proactive measure to identify system issues                        No           Yes                                       Yes
-  HTTP connection             Helps us identify the performance of the web server                Yes          Yes (only if HTTP services are running)   No
-  AJP connection              Helps us find out the connectivity of the web/application server   Yes          Yes                                       No
-  Database connection count   Helps us identify the performance of the database server           No           No                                        Yes
-  Connection Idle             Helps us identify the issues of the database server                No           No                                        Yes
-  Disk space                Proactive measure to identify system issues (Disk out of space)    Yes          Yes                                       Yes
-  Error code in logs          Helps us identify potential issues on systems                      No           Yes                                       Yes
-
+![](./images/18.PNG)
 
 Tomcat Manager in Tomcat 8
 --------------------------------------------

@@ -433,13 +433,7 @@ thread pool to find out where they can be used. The following table
 shows the comparison between both the thread pooling methods for Tomcat
 7:
 
-
-  Features          Shared thread pool   Dedicated thread pool
-  ----------------- -------------------- -----------------------
-  Number of users   Less                High
-  Environment       Development          Production
-  Performance       Low                  Good
-
+![](./images/2.PNG)
 
 ##### maxThreads
 
@@ -538,7 +532,7 @@ information such as the PID, where Tomcat is running, and so on:
 
 
 ```
-root 4306 1 0 14:09 pts/1 00:00:04 /usr/lib/jvm/java-8-openjdk-amd64/bin/java -Djava.util.logging.config.file=/opt/apache-tomcat-8.5.61/conf/logging.properties - Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager - Djava.endorsed.dirs=/opt/apache-tomcat-8.5.61/endorsed -classpath /opt/apache-tomcat-8.5.61/bin/bootstrap.jar:/opt/apache-tomcat- 7.0.12/bin/tomcat-juli.jar -Dcatalina.base=/opt/apache-tomcat-8.5.61 - Dcatalina.home=/opt/apache-tomcat-8.5.61 -Djava.io.tmpdir=/opt/apache-tomcat-8.5.61/temp org.apache.catalina.startup.Bootstrap start
+root 4306 1 0 14:09 pts/1 00:00:04 /usr/lib/jvm/java-8-openjdk-amd64/bin/java -Djava.util.logging.config.file=/opt/apache-tomcat-8.5.61/conf/logging.properties - Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager - Djava.endorsed.dirs=/opt/apache-tomcat-8.5.61/endorsed -classpath /opt/apache-tomcat-8.5.61/bin/bootstrap.jar:/opt/apache-tomcat-8.5.61/bin/tomcat-juli.jar -Dcatalina.base=/opt/apache-tomcat-8.5.61 - Dcatalina.home=/opt/apache-tomcat-8.5.61 -Djava.io.tmpdir=/opt/apache-tomcat-8.5.61/temp org.apache.catalina.startup.Bootstrap start
 ```
 
 
@@ -575,16 +569,7 @@ shared memory. This command provides different options for executing the
 command. The following table describes the useful options of
 JMAP:
 
-
-  Options                        Description
-  ------------------------------ ------------------------------------------------------------------------------
-  `-dump`             Dumps the Java heap in` hprof` binary format
-  `-finalizer info`   Prints information on objects awaiting finalization
-  `-heap`             Prints a heap summary
-  `-histo`            Prints a histogram of the heap
-  `-permstat`         Prints class loader-wise statistics of permanent generation of the Java heap
-
-
+![](./images/3.PNG)
 
 ### Note
 
@@ -813,41 +798,17 @@ collectors used in the real-time environment:
 
 The following table describes the features of the serial collector:
 
-
-  Features      Serial collector
-  ------------- -------------------------------------------
-  Process       Single thread is used for GC
-  GC pause      High
-  Threading     Single threaded
-  Application   Small application (data less than 100 MB)
-  Advantage     There is single thread communication
-
+![](./images/4.PNG)
 
 The following table describes the features of the parallel
 collector:
 
-
-  Features      Parallel collector
-  ------------- ------------------------------------------------------
-  Process       Parallel thread does minor GC
-  GC pause      Less than Serial
-  Threading     Multithreaded
-  Application   Mid-large
-  Advantage     Used in applications when peak performance is needed
-
+![](./images/5.PNG)
 
 The following table describes the features of the concurrent
 collector:
 
-
-  Features      Concurrent collector
-  ------------- ------------------------------------------------
-  Process       GC is done concurrently
-  GC pause      Short pause
-  Threading     Multithreaded
-  Application   Mid-large
-  Advantage     Used in applications when a response is needed
-
+![](./images/6.PNG)
 
 
 ### Note
@@ -915,26 +876,9 @@ use.
 
 The following table describes very commonly used options for JVM:
 
+![](./images/7.PNG)
 
-  Options                Parameter                                            Description
-  ---------------------- ---------------------------------------------------- ---------------------------------------------------------------------------------
-  Behavioral Options    `-XX:+ScavengeBeforeFullGC`               Do young generation GC prior to a full GC
-  Behavioral Options     `--XX:-UseParallelGC`                     Use parallel garbage collection for scavenges
-  Performance Options    `-XX:MaxNewSize=size`                      Maximum size of new generation (in bytes)
-  Performance Options    `-XX:MaxPermSize=64m`                     Size of the Permanent Generation (after exceeding` Xmx` value)
-  Performance Options    `-Xms`                                    Minimum heap memory for the startup of Tomcat
-  Performance Options   `Xmx`                                     Maximum memory allocated to the instance
-  Performance Options    `-Xss`                                    Stack size for the heap
-  Debugging Options      `-XX:-CITime`                             Prints time spent in the JIT Compiler
-  Debugging Options      `-XX:ErrorFile=./hs_err_pid<pid>.log`      If an error occurs, save the error data to this file
-  Debugging Options      `-XX:HeapDumpPath=./java_pid<pid>.hprof`   Path to the directory or filename for the heap dump
-  Debugging Options      `-XX:-HeapDumpOnOutOfMemoryError`         Dump the heap to the file when` java.lang.OutOfMemoryError` is thrown
-  Options                Parameter                                            Description
-  Debugging Options     `-XX:OnError="<cmd args>;<cmd args>`\"     Run user-defined commands on fatal error
-  Debugging Options      `-XX:OnOutOfMemoryError="<cmd args>`;      Run user-defined commands when an OutOfMemoryError is first thrown
-  Debugging Options      `-XX:-PrintClassHistogram`                Print a histogram of class instances on[ *Ctrl-Break*]
-
-
+![](./images/8.PNG)
 
 ### Note
 

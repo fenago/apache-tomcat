@@ -417,17 +417,7 @@ shows the sequence of the log levels for JULI:
 Every log level in JULI has its own functionality. The following table
 shows the functionality of each log level in JULI:
 
-
-  Log level          Description
-  ------------------ ----------------------------------------------------------------
-  SEVERE(highest)   Captures exception and Error
-  WARNING           Warning messages
-  INFO              Informational message, related to the server activity
-  CONFIG            Configuration message
-  FINE              Detailed activity of the server transaction (similar to debug)
-  FINER             More detailed logs than FINE
-  FINEST(least)     Entire flow of events (similar to trace)
-
+![](./images/13.PNG)
 
 For example, let\'s take an appender from logging.properties and find
 out the log level used; the first log appender for localhost is using
@@ -491,43 +481,7 @@ shows the different types of log levels in log4j:
 Every log level in log4j has its own functionality. The following table
 shows the functionality of each log level in log4j:
 
-
-+-----------+---------------------------------------------------------+
-| Log level | Description                                             |
-+:==========+:========================================================+
-| OFF      | This level is set when you want logging to be set       |
-|           | as` false` (Stopped logging).                 |
-+-----------+---------------------------------------------------------+
-| FATAL    | This log level will print the severe errors that cause  |
-|           | premature termination.                                  |
-+-----------+---------------------------------------------------------+
-| ERROR     | This log level is used to capture runtime errors or     |
-|           | unexpected conditions.                                  |
-|           |                                                         |
-|           | Expect these to be immediately visible on a status      |
-|           | console.                                                |
-+-----------+---------------------------------------------------------+
-| WARN     | This level is used in the previous version.             |
-|           |                                                         |
-|           | It gives you[ *almost*] errors, other        |
-|           | runtime situations that are undesirable or unexpected,  |
-|           | but not necessarily[ *wrong*].               |
-|           |                                                         |
-|           | Expect these to be immediately visible on a status      |
-|           | console.                                                |
-+-----------+---------------------------------------------------------+
-| INFO     | This log level will define the interesting runtime      |
-|           | events (startup/shutdown).                              |
-|           |                                                         |
-|           | It is best practice to put the logs at the INFO level.  |
-+-----------+---------------------------------------------------------+
-| DEBUG    | Detailed information on the flow through the system is  |
-|           | defined in this level.                                  |
-+-----------+---------------------------------------------------------+
-| TRACE    | This log level captures all the events in the system    |
-|           | and application.                                        |
-+-----------+---------------------------------------------------------+
-
+![](./images/14.PNG)
 
 #### How to use log4j
 
@@ -590,18 +544,7 @@ Until now, we have discussed the various log levels for JULI and log4j.
 Let us do a quick log level mapping for JULI and log4j. The following
 table shows the one-to-one mapping for log4j and JULI:
 
-
-
-  Log level in JULI   Log level in log4j
-  ------------------- --------------------
-  SEVERE             FATAL, ERROR
-  WARNING             WARN
-  INFO                INFO
-  CONFIG              NA
-  FINE                DEBUG
-  FINER               DEBUG
-  FINEST              TRACE
-
+![](./images/15.PNG)
 
 Values for Tomcat 8
 -------------------------------------
@@ -638,30 +581,7 @@ pattern="%h %l %u %t %T &quot;%r&quot; %s %b" resolveHosts="false"/>
 The following table shows the values used in Tomcat 8 for log pattern
 customization:
 
-
-  Values   Description
-  -------- -----------------------------------------------------------------------------------------------------
-  %a      Remote IP address
-  %A      Local IP address
-  %b      Bytes sent, excluding HTTP headers, or \'\' if zero
-  %B      Bytes sent, excluding HTTP headers
-  %h      Remote hostname (or IP address if` enableLookups` for the connector is` false)`
-  %H      Request protocol
-  %l      Remote logical username from identd
-  %m      Request method (GET, POST, and so on)
-  %p      Local port on which this request was received
-  %q      Query string (prepended with a \'?\' if it exists)
-  %r      First line of the request (method and request URI)
-  %s      HTTP status code of the response
-  %S      User session ID
-  %t      Date and time, in Common Log format
-  %u      Remote user that was authenticated (if any)
-  %U      Requested URL path
-  %v      Local server name
-  %D      Time taken to process the request, in milliseconds
-  %T      Time taken to process the request, in seconds
-  %I      Current request thread name (can compare later with stack traces)
-
+![](./images/16.PNG)
 
 
 Log analysis

@@ -725,7 +725,7 @@ following screenshot:
 
 
 
-The following screenshot shows the[ **Server Status:**
+The following screenshot shows the **Server Status:**
 
 
 

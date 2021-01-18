@@ -82,11 +82,9 @@ Installation of Tomcat 8
 ------------------------------------------
 
 
-
 In the previous section, we have discussed the new enhancements in
 Apache Tomcat 8. Now, it\'s time to move on to the Tomcat
 installation.
-
 
 
 ### How to download the Tomcat software
@@ -104,52 +102,14 @@ Perform the following steps to download the software:
     <http://www.apache.org/licenses/>. Now, the second problem is how to
     download the software.
 - It is always recommended to download the software from its official
-    site, <http://tomcat.apache.org/download-70.cgi>. By default, on
+    site, <http://tomcat.apache.org/download-80.cgi>. By default, on
     <http://tomcat.apache.org/>, we get the latest stable version of
     Tomcat package and we have to download the package based on the
     operating system, where we want to install it.
 
 
 
-
 ![](./images/6624_01_01.jpg)
-
-
-
-Once the download is complete, then you have to do the integrity check
-for the downloaded software using the MD5 checksum.
-
-
-### Note
-
-
-MD5 Message-Digest Algorithm is a widely used cryptographic hash
-function that produces a 128-bit (16 byte) hash value.
-
-
-Following is the process to perform the integrity check using the MD5
-checksum:
-
-
-1.  Download the MD5 checksum from the website apache.org. The MD5 check
-    sum is integrated with every package we download. The previous
-    screenshot shows the packages which are available in MD5, and by
-    clicking on md5 on the website, we can compare the checksum
-    generated in our system with the value given on the site.
-
-2.  Run the following command to generate the checksum for the
-    downloaded software. See the following screenshot:
-
-    ```
-    [root@localhost opt]# cksum apache-tomcat-8.5.61.zip
-    ```
-
-
-    
-
-![](./images/6624_01_02.jpg)
-
-
 
 
 Tomcat comes with different packages for installation such as binary,
@@ -212,240 +172,13 @@ software, it can be done in this package.
 
 ### Prerequisites for the Tomcat 8 installation
 
+Following are the prerequisites mentioned for Apache Tomcat 8:
 
-Before we begin with the Apache Tomcat 8 installation, we have to
-configure the prerequisites and they are very important for the Tomcat 8
-installation to start. Following are the prerequisites mentioned for
-Apache Tomcat 8:
-
-- Java SE 1.6 or later
+- Java Installed
 - Configuration of the OS environment variables
 
 
-#### Installation of Java
-
-
-Java has been developed by many vendors. Based on the application
-requirement and type of architecture, different JVMs are used by various
-applications. Common JDK vendors are IBM, HP, Sun, OpenJDK, and so on.
-Sun holds a major stake in IT industries. JDK is widely used and
-accepted across various IT industries.
-
-JDK packages are available for each OS and can be compiled on any system
-using a common set of libraries. These packages are easily available on
-the Internet or already integrated with different OS vendors.
-
-JDK/JRE comes in 32 bit and 64 bit editions, so we can use it based on
-the application requirement. Some of the performance characteristics of
-the 64 bit versus 32 bit[ **Virtual Machine**
-(**VM**) are:
-
-- The benefits of using 64 bit are being able to address larger
-    amounts of memory which comes with a small performance loss in 64
-    bit VMs, versus running the same application on a 32 bit VM
-- You can allocate more than 4 GB to JVM for memory intensive
-    applications
-
-
-
-### Note
-
-In a 64 bit Java edition, you have to allocate more memory for JVM as
-compared to a 32 bit edition. In practice, a 64 bit Java requires 30
-percent more memory than the 32 bit Java version.
-
-
-##### Installation of Java in Linux
-
-
-In this topic, we will discuss the steps performed during installation
-of Java on Linux:
-
-
-1.  Download the JDK from the Oracle site on the Linux system.
-
-    
-    ### Note
-
-    For more information about the version changes and releases, visit
-    <http://www.oracle.com/technetwork/java/javase/downloads/index.html>.
-
-    We are doing the installation on the` /opt` partition of
-    the hard drive and the Java version we are using is Java(TM) SE
-    Runtime Environment (build 1.6.0\_24-b07).
-
-
-- Once the download is complete, it will create the binary file in
-        `/opt` (`jdk-6u24-linux-i586.bin`).
-
-
-2.  Change the permission of the package using the following command:
-
-    ```
-    chmod 0755 jdk-6u24-linux-i586.bin
-    ```
-
-
-    
-    ### Note
-
-    The` chmod 0755 file` is equivalent
-    to` u=rwx (4+2+1),go=rx (4+1 & 4+1)`. The` 0`
-    specifies no special modes.
-
-
-3.  Run the following command to install the JDK:
-
-    ```
-    [root@localhost opt]# ./jdk-6u24-linux-i586.bin
-    ```
-
-
-- You will see an output similar to the following screenshot:
-
-
-    
-
-![](./images/6624_01_03.jpg)
-
-
-
-4.  During the installation, the binary will prompt for the acceptance
-    of the agreement, then press Enter. See the following screenshot:
-
-    
--
-![](./images/6624_01_04.jpg)
--
-
-
-5.  After pressing Enter it will exit from the command prompt, as shown
-    in the following screenshot:
-
-    
-
-![](./images/6624_01_05.jpg)
-
-
-
-6.  After the installation is complete, the binary will create the
-    folder named jdk1.6.0\_24 in /opt. If the folder is present in /opt,
-    that means the installation is successfully done. See the following
-    screenshot:
-
-    
--
-![](./images/6624_01_06.jpg)
--
-
-
-
-Let\'s quickly go through the JDK directory structure, shown in the
-previous screenshot:
-
-- `bin:` It contains the entire executable for the JDK for
-    java, javac, jmap, and so on.
-- `jre:` It contains all the files necessary for Java to
-    perform the function.
-- `lib:` As the name suggests, it\'s a library directory for
-    the JDK.
-- `man:` This directory contains all the manual pages for
-    Java (document directory).
-- `demo:`-This folder contains working examples of different
-    utilities. These utilities can be directly used.
-- `sample:` This directory contains the code files for
-    utilities provided in the demo directory.
-- `include:` It contains the header files for different
-    functions used in Java.h
-- `db:` It contains the entire component of the Derby
-    Database. Derby is a pure Java relational database engine.
-
-
-
-##### Setting the JAVA\_HOME and the PATH environment variable in Linux
-
-
-The environment variable and path are set differently in Linux as
-compared to Windows. Perform the following steps to set the environment
-variable in Linux:
-
-
-1.  Open the .bash\_profile using the vi editor for the root user.
-
-    
-    ### Note
-
-    You can put the environment variable in` bashrc` also. It
-    will also execute at the time of the user login.
-
-
-2.  Add the following environment variable in the file. The following is
-    the code snippet of .bash\_profile. The highlighted code shows the
-    declaration of JAVA\_HOME and PATH. export will add the JAVA\_HOME
-    and PATH to the system parameter for every user login.
-
-    ```
-    # .bash_profile
-    # Get the aliases and functions
-    if [ -f ~/.bashrc ];then . ~/.bashrc
-    fi
-    # User specific environment and start-up programs
-    JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-    PATH=$JAVA_HOME/bin:$PATH:$HOME/bin
-    export PATH JAVA_HOME
-    unset USERNAME
-    ```
-
-
-3.  Save the .bash\_profile using the :wq command.
-
-4.  Once you have saved the .bash\_profile, then you have to logout and
-    re-log in to the environment to activate the changes using the
-    following command:
-
-    ```
-    su - username
-    su - root (as our user is root)
-    ```
-
-
-    
-    ### Note
-
-    If we run the previous command for any user, then the profile of
-    that user will be reloaded.
-
-
-
-Also, you can run the` env` command to verify the environment
-variables are configured properly, as shown in the following screenshot:
-
-
-
-![](./images/6624_01_14.jpg)
-
-
-
-
-### Note
-
-It is always best practice to first take the backup of the existing
-profile. In case there are issues while doing the changes, then we can
-revert back the changes using the command` cp`
-
-
-
-```
-[root@localhost ~]# cp .bash_profile .bash_profile_backup.
-```
-
-
-
-Now we have set the environment variable for Windows and Linux
-environments, but how can we verify whether the environment is set
-properly or not?
-
-
+##### JAVA\_HOME and the PATH environment variable in Linux
 
 In Linux, we can use the following command to verify the environment
 variables:
@@ -490,9 +223,11 @@ Tomcat 8.
 Installation of Tomcat 8 is quite simple in a Linux environment. It can be done in just three steps:
 
 
+<span style="color:red;">Note: Setup apache-tomcat-8.5.61.zip has been downloaded and unzipped in /opt directory already.</span>
+
 
 1.  Download the latest stable version from Tomcat\'s official site
-    http://tomcat.apache.org/download-70.cgi. Once the download is
+    http://tomcat.apache.org/download-80.cgi. Once the download is
     complete, save it in the /opt location. Unzip the Tomcat 8 source,
     that is, apache-tomcat-8.5.61.zip using the following command:
 
@@ -547,20 +282,23 @@ information. Let\'s run the script using the following command:
 
 
 ```
+
 [root@localhost bin]# ./version.sh
-Using CATALINA_BASE: /opt/apache-tomcat-8.5.61
-Using CATALINA_HOME: /opt/apache-tomcat-8.5.61
+
+Using CATALINA_BASE:   /opt/apache-tomcat-8.5.61
+Using CATALINA_HOME:   /opt/apache-tomcat-8.5.61
 Using CATALINA_TMPDIR: /opt/apache-tomcat-8.5.61/temp
-Using JRE_HOME: /usr/lib/jvm/java-8-openjdk-amd64
-Using CLASSPATH: /opt/apache-tomcat-8.5.61/bin/bootstrap.jar:/opt/apache-tomcat-8.5.61/bin/tomcat-juli.jar
-Server version: Apache Tomcat/7.0.12
-Server built: Apr 1 2011 06:13:02
-Server number: 7.0.12.0
-OS Name: Linux
-OS Version: 2.6.18-8.el5
-Architecture: i386
-JVM Version: 1.6.0_24-b07
-JVM Vendor: Sun Microsystems Inc.
+Using JRE_HOME:        /usr/lib/jvm/java-8-openjdk-amd64
+Using CLASSPATH:       /opt/apache-tomcat-8.5.61/bin/bootstrap.jar:/opt/apache-tomcat-8.5.61/bin/tomcat-juli.jar
+Using CATALINA_OPTS:   
+Server version: Apache Tomcat/8.5.61
+Server built:   Dec 3 2020 14:03:28 UTC
+Server number:  8.5.61.0
+OS Name:        Linux
+OS Version:     4.18.0-193.28.1.el8_2.x86_64
+Architecture:   amd64
+JVM Version:    1.8.0_275-8u275-b01-0ubuntu1~20.04-b01
+JVM Vendor:     Private Build
 ```
 
 
@@ -626,7 +364,7 @@ mentioned steps:
     Using CATALINA_HOME: /opt/apache-tomcat-8.5.61
     Using CATALINA_TMPDIR: /opt/apache-tomcat-8.5.61/temp
     Using JRE_HOME: /usr/lib/jvm/java-8-openjdk-amd64
-    Using CLASSPATH: /opt/apache-tomcat- 7.0.12/bin/bootstrap.jar:/opt/apache-tomcat-8.5.61/bin/ tomcat-juli.jar
+    Using CLASSPATH: /opt/apache-tomcat-8.5.61/bin/bootstrap.jar:/opt/apache-tomcat-8.5.61/bin/ tomcat-juli.jar
     ```
 
 
@@ -647,7 +385,7 @@ Using CATALINA_BASE: /opt/apache-tomcat-8.5.61
 Using CATALINA_HOME: /opt/apache-tomcat-8.5.61
 Using CATALINA_TMPDIR: /opt/apache-tomcat-8.5.61/temp
 Using JRE_HOME: /usr/lib/jvm/java-8-openjdk-amd64
-Using CLASSPATH: /opt/apache-tomcat- 7.0.12/bin/bootstrap.jar:/opt/apache-tomcat-8.5.61/bin/tomcat-juli.jar
+Using CLASSPATH: /opt/apache-tomcat-8.5.61/bin/bootstrap.jar:/opt/apache-tomcat-8.5.61/bin/tomcat-juli.jar
 ```
 
 
@@ -662,8 +400,6 @@ be accessed on the web browser using the
 URL,` http://localhost:8080`. We then find the Tomcat welcome
 page, which shows that Tomcat is installed correctly and running fine in
 the environment, as shown in the following screenshot:
-
-
 
 
 ![](./images/6624_01_24.jpg)
@@ -689,54 +425,15 @@ Common problems and troubleshooting in installation
 ---------------------------------------------------------------------
 
 
-
 There are multiple issues which may arise during the installation of
 Tomcat 8. Let\'s discuss these issues:
-
-
-
-### Error: Permission denied for the Java binary
-
-
-**Scenario 1:** The Java installation is not working, while
-executing the Java binary.
-
-
-
-```
-[root@localhost opt]# ./jdk-6u24-linux-i586.bin
--bash: ./jdk-6u24-linux-i586.bin: Permission denied
-```
-
-
-**Issue:** The Java binary doesn\'t have execute permissions
-with a specific user.
-
-**Fix:** Change the permission to 0755
-for` ./jdk-6u24-linux-i586.bin` using the following command:
-
-
-
-```
-chmod 0755 jdk-6u24-linux-i586.bin
-```
-
-
-
-### Note
-
-
-The` chmod 0755 file` is equivalent
-to` u=rwx (4+2+1),go=rx (4+1 & 4+1)`. The` 0`
-specifies no special modes.
 
 
 ### Error: Tomcat is not able to find JAVA\_HOME
 
 
-**Scenario 2:** While starting the Tomcat startup script, the
+**Scenario 1:** While starting the Tomcat startup script, the
 following error occurs:
-
 
 
 ```
@@ -746,22 +443,23 @@ At least one of these environment variables is needed to run this program
 ```
 
 
-**Fix:** Check the` .bash_profile` and find out
+**Fix:** Check the `~/.bashrc` and find out
 whether the following mentioned entry is present in the file:
 
 
 
 ```
-JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+source /etc/environment
+# JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 PATH=$JAVA_HOME/bin:$PATH:$HOME/bin
-export PATH JAVA_HOME
+export PATH
 ```
 
 
 ### Error: Error in the logs showing port already in use
 
 
-**Scenario 3:** Tomcat services is not displayed after
+**Scenario 2:** Tomcat services is not displayed after
 running` startup.sh`.
 
 **Issue:** This service is already running on the server.
@@ -771,7 +469,7 @@ using the following command in Linux:
 
 
 ```
-Ps -ef |grep tomcat
+ps -ef |grep tomcat
 ```
 
 

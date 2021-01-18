@@ -625,7 +625,7 @@ physical machine. Let\'s configure instance 2 step-by-step:
     
 
     ```
-    INFO: Starting Servlet Engine: Apache Tomcat/7.0.12
+    INFO: Starting Servlet Engine: Apache Tomcat/8.5.61
     Oct 11, 2011 5:23:41 PM org.apache.catalina.ha.tcp.SimpleTcpCluster startInternal
     INFO: Cluster is about to start
     Oct 11, 2011 5:23:42 PM org.apache.catalina.tribes.transport.ReceiverBase bind
@@ -1001,7 +1001,7 @@ The following are the logs for node 2:
 
 
 ```
-INFO: Starting Servlet Engine: Apache Tomcat/7.0.12
+INFO: Starting Servlet Engine: Apache Tomcat/8.5.61
 Oct 11, 2011 5:23:41 PM org.apache.catalina.ha.tcp.SimpleTcpCluster startInternal
 INFO: Cluster is about to start
 Oct 11, 2011 5:23:42 PM org.apache.catalina.tribes.transport.ReceiverBase bind

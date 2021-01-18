@@ -1067,16 +1067,7 @@ still don\'t know when to use which module to increase the speed of the
 web server. Let\'s compare both modules and find out which can be used
 in a real-time environment:
 
-
-  Feature                `mod_jk`   `mod_proxy`
-  ---------------------- -------------------- --------------------------------------------
-  Load balancing         High level           Basic
-  Management interface   Yes                  No
-  Compilation            Separate process     Not required. By default comes with Apache
-  Configuration          Huge                 Basic
-  Protocol               AJP                  HTTP/HTTPS/AJP
-  Node failure           Advance              NA
-
+![](./images/9.PNG)
 
 The previous table shows the comparison of` mod_jk`
 and` mod_proxy`. Based on the features, the web administrator

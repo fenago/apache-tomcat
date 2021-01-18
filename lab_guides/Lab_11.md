@@ -76,14 +76,7 @@ Let us assume the web server name is` webserver1.yxz.com` and
 is hosted on the IP 192.168.0.1. You have to add the following records
 in your DNS server:
 
-
-  Alias                                        Resource record   Domain
-- ----------------- --------------------
-  `webserver1.yxz.com`               A                 168.0.1
-  [www.xyz.com](http://www.xyz.com/){.ulink}   C                 webserver1.yxz.com
-  [www.xzy.com](http://www.xzy.com/){.ulink}   C                 webserver1.yxz.com
-  [www.abc.com](http://www.abc.com/){.ulink}   C                 webserver1.yxz.com
-
+![](./images/21.PNG)
 
 Once these records are created, you can configure the virtual server in
 the web server configuration.
@@ -126,14 +119,7 @@ on the IP 192.168.0.1. All the other domains are configured on a
 different IP (192.168.0.2, 192.168.0.3, and 192.168.0.4), as shown in
 the following table:
 
-
-  Alias                            Record   Domain
-  -------------------------------- -------- ---------
-  `webserver1.yxz.com`   A        168.0.1
-  `www.xyz.com`          A        168.0.2
-  `www.xzy.com`          A        168.0.3
-  `www.abc.com`          A        168.0.4
-
+![](./images/22.PNG)
 
 Once these records are created, you can configure the virtual server in
 the web server configuration.
@@ -192,14 +178,7 @@ Let us assume the web server name is` webserver1.yxz.com` and
 is hosted on the IP 192.168.0.1. You have to add the following records
 in your DNS server:
 
-
-  Alias                                        Resource record   Domain
-- ----------------- --------------------
-  `webserver1.yxz.com`               A                 168.0.1
-  [www.xyz.com](http://www.xyz.com/){.ulink}   C                 webserver1.yxz.com
-  [www.xzy.com](http://www.xzy.com/){.ulink}   C                 webserver1.yxz.com
-  [www.abc.com](http://www.abc.com/){.ulink}   C                 webserver1.yxz.com
-
+![](./images/23.PNG)
 
 Once these records are created, you can configure the virtual server in
 the web server configuration.
@@ -242,14 +221,7 @@ on the IP 192.168.0.1. All the other domains are configured on a
 different IP (192.168.0.2, 192.168.0.3, and 192.168.0.4), as shown in
 the following table:
 
-
-  Alias                            Record   Domain
-  -------------------------------- -------- ---------
-  `webserver1.yxz.com`   A        168.0.1
-  `www.xyz.com`          A        168.0.2
-  `www.xzy.com`          A        168.0.3
-  `www.abc.com`          A        168.0.4
-
+![](./images/24.PNG)
 
 Once these records are created, you can configure the virtual server in
 the web server configuration.
@@ -280,13 +252,7 @@ following steps need to be performed:
     services so that it can be replicated on the server. Following are
     the DNS records with the address and CNAME:
 
-    
-      Alias                            Record   Domain
-      -------------------------------- -------- --------------------------------
-      `webserver1.yxz.com`   A        168.0.1
-      `www.xyz.com`          C        `webserver1.yxz.com`
-      `www.xzy.com`          C        `webserver1.yxz.com`
-      `www.abc.com`          C        `webserver1.yxz.com`
+![](./images/25.PNG)
 
 
 2.  For implementing virtual hosting, you have to edit server.xml, which
@@ -423,20 +389,7 @@ The following table compares the different environments and their
 functionalities with respect to different tasks performed during
 creation and management of the web infrastructure:
 
-
-
-  Task                  Development   QA       Stage   Production
-  --------------------- ------------- -------- ------- ------------
-  Auto deployment       Yes           Yes      No      No
-  Single machine        Yes           No       No      No
-  Clustering            No            Yes      Yes     Yes
-  Developer access      Yes           Yes      No      No
-  High-end machine      No            No   Yes     Yes
-  Change control        No            No       No      Yes
-  Performance testing   No            No       Yes     No
-  Functional testing    No            Yes      No      No
-
-
+![](./images/26.PNG)
 
 Tuning cache
 ------------------------------

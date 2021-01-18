@@ -312,7 +312,7 @@ following steps:
 
 
 1.  Download the latest stable version from the Tomcat official site,
-    http://tomcat.apache.org/download-70.cgi. Once the download is
+    http://tomcat.apache.org/download-80.cgi. Once the download is
     complete, save it in the /opt location.
 
 2.  Unzip the Tomcat 8 source, that is apache-tomcat-8.5.61.zip, using
@@ -622,13 +622,7 @@ services by helping organizations match their IT resources to their
 business demands. It is also useful in estimating the project cost for
 any project or revenue usage for the environment.
 
-
-  Process                  Environment
-  ------------------------ ------------------------------------------------------
-  Application sizing       Stage environment
-  Capacity planning        Development environment or before the project begins
-  Performance management   Stage environment
-
+![](./images/19.PNG)
 
 ### Service Transition
 
@@ -637,18 +631,7 @@ any project or revenue usage for the environment.
 service delivery and often consists of various processes before the go
 live. Following is the list of ITIL processes in ST:
 
-
-
-  Process                                      Environment (used)
-- ------------------------------------
-  Transition planning and support              Post go live support in production
-  Change management                            Before go live in production
-  Service asset and configuration management   Before go live in production
-  Release and deployment management            Before go live in production
-  Service validation and testing               Before go live in production
-  Change evaluation                            Before go live in production
-  Knowledge management                        Development/QA/stage/production
-
+![](./images/20.PNG)
 
 
 Summary
