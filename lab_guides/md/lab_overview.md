@@ -25,34 +25,23 @@ This course takes you from beginner to expert in logical stages, covering all th
 
 ### Labs
 
-Labs for this course are available at endpoints shared below. Update `<host-ip>` with the lab environment DNS.
 
-1. ##### Installation of Tomcat 8
-		* http://<host-ip>/lab/workspaces/lab1_
-2. ##### Configuration and Deployment
-		* http://<host-ip>/lab/workspaces/lab2_
-3. ##### Performance Tuning
-		* http://<host-ip>/lab/workspaces/lab3_
-4. ##### Integration of Tomcat with the Apache Web Server
-		* http://<host-ip>/lab/workspaces/lab4_
-5. ##### Securing Tomcat 8
-		* http://<host-ip>/lab/workspaces/lab5_
-6. ##### Logging in Tomcat 8
-		* http://<host-ip>/lab/workspaces/lab6_
-7. ##### Troubleshooting in Tomcat
-		* http://<host-ip>/lab/workspaces/lab7_
-8. ##### Monitoring and Management of Tomcat 8
-		* http://<host-ip>/lab/workspaces/lab8_
-9. ##### Clustering in Tomcat 8
-		* http://<host-ip>/lab/workspaces/lab9_
-10. ##### Tomcat Upgrade
-		* http://<host-ip>/lab/workspaces/lab10_
-11. ##### Advanced Configuration for Apache Tomcat 8
-		* http://<host-ip>/lab/workspaces/lab11_
+
+1. Installation of Tomcat 8
+2. Configuration and Deployment
+3. Performance Tuning
+4. Integration of Tomcat with the Apache Web Server
+5. Securing Tomcat 8
+6. Logging in Tomcat 8
+7. Troubleshooting in Tomcat
+8. Monitoring and Management of Tomcat 8
+9. Clustering in Tomcat 8
+10. Tomcat Upgrade
+11. Advanced Configuration for Apache Tomcat 8
 
 ### About
 
-Apache Tomcat (or simply Tomcat) is an open source servlet container developed by the Apache Software Foundation (ASF). The latest major stable release, Apache Tomcat version 7 implements the Servlet 3 and JavaServer Pages 2 specifications from the Java Community Process, and includes many additional features that make it a useful platform for developing and deploying web applications and web services.
+Apache Tomcat (or simply Tomcat) is an open source servlet container developed by the Apache Software Foundation (ASF). The latest major stable release, Apache Tomcat version 8 implements the Servlet 3 and JavaServer Pages 2 specifications from the Java Community Process, and includes many additional features that make it a useful platform for developing and deploying web applications and web services.
 
 Apache Tomcat 8 Essentials follows a practical approach to teach installing, configuring, and maintaining Tomcat. It helps you to understand the middle architecture for hosting multiple websites and also provides the confidence to implement middleware support. It imparts to you the capacity to resolve migration issues and also provides regular maintenance solutions. This is the first and only course to cover upgrading to Tomcat 8 from previous versions.
 
