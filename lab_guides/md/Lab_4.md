@@ -199,7 +199,7 @@ performed:
     
     ### Note
 
-    We are using[ **httpd-2.2.X-win32-x86-no\_ssl.msi** for
+    We are using **httpd-2.2.X-win32-x86-no\_ssl.msi** for
     the installation of Apache here and the installation steps will not
     change with the update of the minor version.
 
@@ -314,7 +314,7 @@ ways:
 By default, Apache comes with a tool called Apache Monitor, through
 which Apache systems can be monitored. The following screenshot shows
 the Apache services status as green. It means the server is running. If
-you want to restart the services, you can use the[ **Restart**
+you want to restart the services, you can use the **Restart**
 button to do the same.
 
 
@@ -325,12 +325,12 @@ button to do the same.
 
 Another way of recycling Apache is through the[
 **services.msc**, which can be accessed by clicking[
-**Start** \|[ **Run** \|[ **services.msc**
+**Start** \| **Run** \| **services.msc**
 
 
-The services console will open. Click on[ **Apache2.2**
+The services console will open. Click on **Apache2.2**
 services, a services properties console window is displayed. It shows
-the[ **Start** and[ **Stop** prompt, and the current
+the **Start** and **Stop** prompt, and the current
 status of the server instance, as shown in the following screenshot:
 
 
@@ -426,7 +426,7 @@ installation:
 
 
 
-By default[ **Apache Portable Runtime** (**APR**)
+By default **Apache Portable Runtime** (**APR**)
 is not installed in the 2.2 version, we have to install it. Let\'s
 discuss APR and its utilities in detail.
 

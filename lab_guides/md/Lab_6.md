@@ -37,8 +37,8 @@ comes with the capability of capturing each class loader activity in the
 Tomcat logs. It is based on the` java.util.logging`
 framework.
 
-By default, Tomcat 8 uses its own[ **Java logging API** to
-implement logging services. This is also called[ **JULI**.
+By default, Tomcat 8 uses its own **Java logging API** to
+implement logging services. This is also called **JULI**.
 This API can be found in` TOMCAT_HOME/bin` of the Tomcat 8
 directory structures (`tomcat-juli.jar`). The following
 screenshot shows the directory structure of the` bin`
@@ -81,8 +81,8 @@ comes with the capability of capturing each class loader activity in the
 Tomcat logs. It is based on the` java.util.logging`
 framework.
 
-By default, Tomcat 8 uses its own[ **Java logging API** to
-implement logging services. This is also called[ **JULI**.
+By default, Tomcat 8 uses its own **Java logging API** to
+implement logging services. This is also called **JULI**.
 This API can be found in` TOMCAT_HOME/bin` of the Tomcat 8
 directory structures (`tomcat-juli.jar`). The following
 screenshot shows the directory structure of the` bin`

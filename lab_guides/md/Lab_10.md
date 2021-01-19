@@ -568,8 +568,7 @@ Following are the steps for Alias configuration:
     testing on the new environment, the functional team can verify the
     application\'s functionality.
 - **Creating CNAME from the current production environment to the new
-    dummy URL:** By creating the[ **Canonical
-    Name(CNAME)**, we are pointing the old application URL to
+    dummy URL:** By creating the **Canonical Name(CNAME)**, we are pointing the old application URL to
     the new environment.
 - **Configuration of the virtual host on Tomcat 8:** By
     creating the virtual host in Tomcat 8, we let Tomcat know where the
@@ -579,59 +578,6 @@ Following are the steps for Alias configuration:
 The previous processes are followed during the upgrade of Tomcat 6 to
 Tomcat 8.
 
-
-
-ITIL process implementation
----------------------------------------------
-
-
-
-Until now, we have discussed the technical process of Tomcat and its
-configuration.Now it\'s time to understand the[ **Information Technology
-Infrastructure Library** (**ITIL**) process
-followed during the upgrade process and its use in different sections of
-the upgrade, based on the features and implementation methods.
-
-
-
-
-### Availability management
-
-
-It can be defined as the process which allows the organization to make
-sure its services support at minimal cost to the environment. It
-consists of the following features:
-
-- **Reliability:** It\'s a process through which IT
-    components are measured, based on the[ **Statement of
-    Work** (**SOW**).
-- **Maintainability:** It\'s a process through which we
-    manage the entire system without any unplanned downtime.
-    
-- **Security:** This service is associated to data. It
-    always refers to the confidentiality, integrity, and availability of
-    that data. The term availability means the entire system service
-    available to the environment.
-
-
-### Capacity management
-
-
-This support refers to the optimum and cost-effective provision of IT
-services by helping organizations match their IT resources to their
-business demands. It is also useful in estimating the project cost for
-any project or revenue usage for the environment.
-
-![](./images/19.PNG)
-
-### Service Transition
-
-
-**Service Transition** (**ST**) is related to the
-service delivery and often consists of various processes before the go
-live. Following is the list of ITIL processes in ST:
-
-![](./images/20.PNG)
 
 
 Summary

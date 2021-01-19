@@ -725,8 +725,8 @@ steps are mentioned as follows:
 
 
 There are two open source tools which are widely used for the thread
-dump analysis; Java[ **Thread Dump Analyzer**
-(**TDA**) and[ **Samurai**.
+dump analysis; Java **Thread Dump Analyzer**
+(**TDA**) and **Samurai**.
 
 
 ### Note
@@ -1196,15 +1196,15 @@ Web server benchmarking
 
 
 Now we know how to troubleshoot problems and find potential solutions in
-the systems. There is one more point left to discuss,[ **Web server
+the systems. There is one more point left to discuss, **Web server
 benchmarking**. Without discussing this topic, troubleshooting
 in Tomcat 8 cannot be marked as complete. It\'s a process through which
-we gauge the performance of a web server, also known as[ **Load
+we gauge the performance of a web server, also known as **Load
 testing**. In this process, we run the server virtually on a
 heavy load and estimate the real-time performance. This process is very
 useful if we want to do capacity planning for the web server. There are
 many tools available for performing load testing on the server such as[
-**ApacheBench** (**ab**),[ **JMeter, LoadRunner,
+**ApacheBench** (**ab**), **JMeter, LoadRunner,
 OpenSTA**, and so on. Let\'s discuss the commonly used open
 source tools such as ApacheBench and JMeter. If we do the benchmarking
 of the server before the go live stage, then we will face less issues in

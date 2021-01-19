@@ -15,7 +15,7 @@ Apache Software Foundation. It was initially developed by James Duncan
 Davidson, a software architect at Sun Microsystems. He later helped make
 this project open source and played a key role in donating this project
 from Sun Microsystems to The Apache Software Foundation. Tomcat
-implements the[ **Java Servlet** and the[ **JavaServer Pages** (JSP) specifications from Sun
+implements the **Java Servlet** and the **JavaServer Pages** (JSP) specifications from Sun
 Microsystems, and provides a \"pure Java\" HTTP web server environment
 for Java code to run.
 
@@ -388,9 +388,7 @@ Using JRE_HOME: /usr/lib/jvm/java-8-openjdk-amd64
 Using CLASSPATH: /opt/apache-tomcat-8.5.61/bin/bootstrap.jar:/opt/apache-tomcat-8.5.61/bin/tomcat-juli.jar
 ```
 
-
-
-### Verification of Tomcat status
+#### Verification of Tomcat status
 
 
 Once we have executed the startup scripts, the next step is the
@@ -405,19 +403,61 @@ the environment, as shown in the following screenshot:
 ![](./images/6624_01_24.jpg)
 
 
-
 Once the welcome page for Tomcat 8 is displayed, we can verify the
-server status by clicking on[ **Server Status.** 
+server status by clicking on **Server Status.** 
 
 
-It will prompt for the user ID/password. Remember, we have created a
-user admin that the user ID will be used here for access, as shown in
-the following screenshot:
+It will prompt for the user ID/password. Let's create a
+user admin that the user ID will be used here for access.
 
+
+#### Tomcat users
+
+Tomcat users are defined in the file – /opt/apache-tomcat-8.5.61/conf/tomcat-users.xml, by default, there is NO user, it means no one can access the Tomcat manager page.
+
+To enable users to access the Tomcat manager page, add a user as the role manager-gui.
+
+
+Original:
+
+```
+<tomcat-users>
+<!--
+  <role rolename="tomcat"/>
+  <role rolename="role1"/>
+  <user username="tomcat" password="tomcat" roles="tomcat"/>
+  <user username="both" password="tomcat" roles="tomcat,role1"/>
+  <user username="role1" password="tomcat" roles="role1"/>
+-->
+</tomcat-users>
+```
+
+Updated:
+
+```
+<tomcat-users>
+<!--
+  <role rolename="tomcat"/>
+  <role rolename="role1"/>
+  <user username="tomcat" password="tomcat" roles="tomcat"/>
+  <user username="both" password="tomcat" roles="tomcat,role1"/>
+  <user username="role1" password="tomcat" roles="role1"/>
+-->
+
+    <role rolename="manager-gui"/>
+    <user username="admin" password="admin" roles="manager-gui"/>
+
+</tomcat-users>
+```
+
+Username: **admin**
+
+Password: **admin**
+
+Shutdown and start Tomcat again, now you should able to access the  **Server Status.** page with user = “admin” and password = “admin”
 
 
 ![](./images/6624_01_25.jpg)
-
 
 
 

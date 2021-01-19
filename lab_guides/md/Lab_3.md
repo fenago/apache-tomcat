@@ -250,7 +250,7 @@ CA Wily, Nagios, Panorama, and so on.
     everyone who is working on this application has the same information
     on the issues.
 - **Follow the problem management approach:** Make it good
-    practice to perform the[ **Root Cause Analysis**
+    practice to perform the **Root Cause Analysis**
     (**RCA**) for every issue. This way recurrence of this
     issue can be avoided in the future.
 
@@ -306,8 +306,7 @@ For more information on the HTTP Connector, please visit
 #### Java AJP Connector
 
 
-The Java AJP Connector is based on the[ **AJP** (**Apache
-JServ Protocol**) and communicates with the web server
+The Java AJP Connector is based on the **AJP** (**Apache JServ Protocol**) and communicates with the web server
 through the AJP. This connector is mainly used when you don\'t want to
 expose your Java servlet container to the Internet (using a different
 frontend server) and is also very helpful where SSL is not terminating
@@ -509,7 +508,7 @@ Tomcat 8 comes with a heap size of 256 MB. Applications today need a
 large memory to run. In order to run the application, we have to tune
 the JVM parameter for Tomcat 8. Let\'s quickly discuss the default JVM
 configurations for Tomcat. The following steps describe the method to
-find out the Tomcat[ **Process ID** (**PID**) and
+find out the Tomcat **Process ID** (**PID**) and
 memory values as shown in the next screenshot:
 
 Run the following command on the terminal in Linux:
@@ -744,7 +743,7 @@ parameters in` catalina.sh`.
 After doing the real-time implementation of increasing the memory, we
 will understand the need to tune JVM and how the heap value increases
 and decreases in Tomcat 8. Another term which people often talk about
-is[ **Garbage Collection** (**GC**). JVM tuning is
+is **Garbage Collection** (**GC**). JVM tuning is
 not complete without garbage collection.
 
 

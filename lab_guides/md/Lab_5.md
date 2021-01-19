@@ -39,8 +39,7 @@ We should download Tomcat from the Tomcat website or any secure, known
 host. There is a chance that malicious software is shipped with Tomcat
 if we download it from an unknown source. Once the download is complete,
 verify the integrity of Tomcat using MD5/PGP. In case of Linux, the MD5
-can be verified with[ **Open Specification for Pretty Good
-Privacy** (**OpenPGP**). This is a must in the
+can be verified with **Open Specification for Pretty Good Privacy** (**OpenPGP**). This is a must in the
 process of production systems.
 
 
@@ -60,7 +59,7 @@ We should download Tomcat from the Tomcat website or any secure, known
 host. There is a chance that malicious software is shipped with Tomcat
 if we download it from an unknown source. Once the download is complete,
 verify the integrity of Tomcat using MD5/PGP. In case of Linux, the MD5
-can be verified with[ **Open Specification for Pretty Good
+can be verified with **Open Specification for Pretty Good
 Privacy** (**OpenPGP**). This is a must in the
 process of production systems.
 
@@ -682,7 +681,7 @@ certificates, which are explained as follows:
 
 The process of installing SSL varies for every server, but there are
 certain parameters which are common to every server for generation of
-the[ **Certificate Signing Request** (**CSR**). The
+the **Certificate Signing Request** (**CSR**). The
 method of generating the CSR may vary, but information required for
 generating the CSR remains the same. The following table provides the
 CSR template:
@@ -699,15 +698,15 @@ Key size: It is the size of the encryption keys.
 
 Let\'s do a real-time implementation for installation of the SSL
 certificate on Tomcat 8. We will install SSL certificate for
-host` tomcat7packtpub.com` in Tomcat 8 by performing the
+host` tomcat8fenago.com` in Tomcat 8 by performing the
 following steps:
 
 
-1.  Create a CSR template for the tomcat7packtpub.com.
+1.  Create a CSR template for the tomcat8fenago.com.
 
 ![](./images/12.PNG)
 
-2.  We need to create the CSR for the host tomcat7packtpub.com. For
+2.  We need to create the CSR for the host tomcat8fenago.com. For
     creating the CSR, we need to run the keytool present in
     JAVA\_HOME/bin. The following command will capture parameters for
     the CSR:
@@ -745,7 +744,7 @@ following steps:
     tomcat7.jks in the TOMCAT\_HOME/conf.
 
     ```
-    [root@localhost conf] # keytool -import -trustcacerts -alias tomcat7 -file tomcat7packtpub.com.pb7 tomcat7.jks
+    [root@localhost conf] # keytool -import -trustcacerts -alias tomcat7 -file tomcat8fenago.com.pb7 tomcat7.jks
     ```
 
 

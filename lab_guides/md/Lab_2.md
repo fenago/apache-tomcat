@@ -321,7 +321,7 @@ datasource configuration:
 Database servers in production
 
 The applications which are hosted on the Internet, their web servers are
-always configured in the[ **Demilitarized Zone**
+always configured in the **Demilitarized Zone**
 (**DMZ**). For more information on the DMZ zone, please refer
 to <http://en.wikipedia.org/wiki/DMZ_(computing)>. Database servers are
 placed in an internal network. In this situation, the firewall port
@@ -691,8 +691,7 @@ enable the Tomcat user configurations, this configuration will be in
 effect after the Tomcat recycle.
 
 You can browse the Tomcat Manager using the
-URL` http://localhost:8080/` and click on[ **Manager
-App**, as shown in the the following screenshot:
+URL` http://localhost:8080/` and click on **Manager App**, as shown in the the following screenshot:
 
 
 
@@ -716,7 +715,7 @@ console, as shown in the following screenshot:
 Through this console, we can deploy the new application or modify the
 current application\'s state to stop, undeploy, start, reload, clear
 sessions, and so on. Also, we can check the current status of the server
-by clicking on the[ **Server Status**, as shown in the
+by clicking on the **Server Status**, as shown in the
 following screenshot:
 
 
@@ -812,7 +811,7 @@ The context path in Tomcat can be enabled in two ways:
 
 For enabling the context path in the Tomcat Manager, you have to first
 log in to the Tomcat Manager app using the
-URL` http://localhost:8080`. Then click on[ **Manager
+URL` http://localhost:8080`. Then click on **Manager
 App**, as shown in the following screenshot:
 
 
@@ -822,7 +821,7 @@ App**, as shown in the following screenshot:
 
 
 
-It then displays the[ **Tomcat Web Application Manager**
+It then displays the **Tomcat Web Application Manager**
 console and its features, as shown in the following
 screenshot:
 
@@ -832,9 +831,9 @@ screenshot:
 
 
 
-You can create the context path using the[ **Deploy** tab.
-Click on[ **Browse** and select the required WAR file. Then
-click on[ **Deploy**. It will take 10 to 15 seconds to deploy
+You can create the context path using the **Deploy** tab.
+Click on **Browse** and select the required WAR file. Then
+click on **Deploy**. It will take 10 to 15 seconds to deploy
 the application and you will see a page similar to the following
 screenshot:
 
@@ -847,7 +846,7 @@ screenshot:
 
 
 The following screenshot shows the application deployment status and
-administrative controls such as[ **Stop, Reload**, and[
+administrative controls such as **Stop, Reload**, and[
 **Undeploy:**
 
 
@@ -935,7 +934,7 @@ You develop your web application within a specified directory structure
 so that it can be archived and deployed on Tomcat 8. All servlets,
 classes, static files, and other resources belonging to a web
 application are organized under a directory hierarchy. The root of this
-hierarchy defines the[ **document root** of your web
+hierarchy defines the **document root** of your web
 application. All files under this root directory can be served to the
 client, except for files under the special
 directory` WEB-INF`, located under the root directory. The
@@ -1218,9 +1217,8 @@ various industries displayed in the following figure:
 -
 
 
-- You can create the context path using the[ **Deploy**
-        tab. Click on[ **Browse** and select the required WAR
-        file. Then click on[ **Deploy**. It will take 10 to 15
+- You can create the context path using the **Deploy**  tab. Click on **Browse** and select the required WAR
+        file. Then click on **Deploy**. It will take 10 to 15
         seconds to deploy the application and you will see a page
         similar to the following screenshot:
 
@@ -1230,8 +1228,8 @@ various industries displayed in the following figure:
     
     
 - The following screenshot shows the application deployment status
-        and administrative control such as[ **Stop, Reload**,
-        and[ **Undeploy:**
+        and administrative control such as **Stop, Reload**,
+        and **Undeploy:**
 
         
     

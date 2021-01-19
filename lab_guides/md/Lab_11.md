@@ -71,7 +71,7 @@ doing the configuration.
 
 For example, if you want to host the previous mentioned sites on the web
 server, then we have to perform the following mentioned methods to
-configure the[ **Domain Name Server** (**DNS**).
+configure the **Domain Name Server** (**DNS**).
 Let us assume the web server name is` webserver1.yxz.com` and
 is hosted on the IP 192.168.0.1. You have to add the following records
 in your DNS server:
@@ -173,7 +173,7 @@ doing the configuration.
 
 For example, if you want to host the previous mentioned sites on the web
 server, then we have to perform the following mentioned methods to
-configure the[ **Domain Name Server** (**DNS**).
+configure the **Domain Name Server** (**DNS**).
 Let us assume the web server name is` webserver1.yxz.com` and
 is hosted on the IP 192.168.0.1. You have to add the following records
 in your DNS server:
@@ -302,7 +302,7 @@ network
 
 For example, if you have a website which needs to be accessed through a
 subdomain by different users, then host aliases are created. It\'s also
-called[ **Sub domain aliases** for the main domain. It is not
+called **Sub domain aliases** for the main domain. It is not
 possible to implement aliases in the previous versions of Tomcat. In
 case we want to implement aliases for any website, we have to use
 Apache, IIS, or a separate web server before Tomcat as a front-end
