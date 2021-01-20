@@ -7,8 +7,7 @@ Lab 2. Configuration and Deployment
 ------------------------------------------------
 
 
-In the previous lab, you have installed Apache Tomcat 8 on DOS
-(Windows) and non-DOS (Linux/Unix,) operating systems. Now, it\'s time
+In the previous lab, you have installed Apache Tomcat 8 on Linux/Unix operating systems. Now, it\'s time
 to discuss the different configuration and deployment strategy tools
 used by different IT industries.
 
