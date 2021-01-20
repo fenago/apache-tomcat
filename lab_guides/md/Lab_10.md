@@ -199,7 +199,7 @@ upgrade for any system in the IT industry:
     current environment to the new system.
 
     
-    ### Note
+#### Note
 
 
     Before migrating the application from the current environment to the
@@ -348,7 +348,7 @@ following steps:
 
 
     
-    ### Note
+#### Note
 
     `chmod 0755 file` is equivalent
     to` u=rwx (4+2+1),go=rx (4+1 & 4+1)`. The` 0`
@@ -358,7 +358,7 @@ following steps:
 6.  Start the Tomcat services and validate the Tomcat setup.
 
     
-    ### Note
+#### Note
 
     If you are doing the installation on the same machine, you have to
     change the default connector port for Tomcat 8, or you will receive

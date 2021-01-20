@@ -144,7 +144,7 @@ Let\'s discuss each term individually to find out their usage:
     enabled.
 
     
-    ### Note
+#### Note
 
 
     If` log4j.appender.CATALINA.append=false`, then logs will
@@ -172,7 +172,7 @@ Let\'s discuss each term individually to find out their usage:
 
 
     
-    ### Note
+#### Note
 
     Loggers, appenders, and layouts together help the developer to
     capture the log message for the application event.
@@ -511,7 +511,7 @@ Following are the steps to be performed to use log4j:
 
 
     
-    ### Note
+#### Note
 
 
     You can customize the log rotation based on size, day, hour, and so
@@ -521,7 +521,7 @@ Following are the steps to be performed to use log4j:
 5.  Restart the Tomcat services.
 
     
-    ### Note
+#### Note
 
     **Important tip for the production environment**
 

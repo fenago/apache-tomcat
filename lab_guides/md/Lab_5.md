@@ -593,7 +593,7 @@ policy for the Tomcat Manager.
 
 
     
-    ### Note
+#### Note
 
     We can define the algorithm based on the OS requirement, such as
     SHA, RSA, MD5, and so on.
@@ -632,7 +632,7 @@ policy for the Tomcat Manager.
     the password.
 
     
-    ### Note
+#### Note
 
     The password will not change here, we have only changed the method
     of storing passwords.
@@ -712,7 +712,7 @@ following steps:
     the CSR:
 
     
-    ### Note
+#### Note
 
     By default,` keytool` will be executed
     from` JAVA_HOME/bin`. But if we have set the Java path,

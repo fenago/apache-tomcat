@@ -283,7 +283,7 @@ threads, or mounting problems. Let us see how to solve the issue.
 
 
     
-    ### Note
+#### Note
 
     In such cases, as mentioned earlier, you have to kill all Apache
     processes and then recycle the Apache instance.
@@ -341,7 +341,7 @@ threads, or mounting problems. Let us see how to solve the issue.
 
 
     
-    ### Note
+#### Note
 
     In case logs are not generated for Apache, it may be due to the hard
     drive running out of space.
@@ -366,7 +366,7 @@ threads, or mounting problems. Let us see how to solve the issue.
 
 
     
-    ### Note
+#### Note
 
     If any mount is running greater than 95 percent, then reduce the
     disk utilization, otherwise the system may cause a disruption of
@@ -716,7 +716,7 @@ steps are mentioned as follows:
     threads.
 
     
-    ### Note
+#### Note
 
     If the stuck thread is at the application level, then the issue is
     related to the application code and if the thread is stuck at the

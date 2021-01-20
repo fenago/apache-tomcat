@@ -257,7 +257,7 @@ Installation of Tomcat 8 is quite simple in a Linux environment. It can be done 
     ```
 
     
-    ### Note
+#### Note
 
     The` chmod 0755 file` is equivalent
     to` u=rwx (4+2+1),go=rx (4+1 & 4+1)`. The` 0`

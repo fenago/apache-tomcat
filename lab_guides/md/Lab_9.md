@@ -748,7 +748,7 @@ performing the following steps:
 
 
     
-    ### Note
+#### Note
 
 
     Include` conf/mod_jk.conf`.
@@ -1133,7 +1133,7 @@ following steps:
     `mod_jk`.
 
     
-    ### Note
+#### Note
 
     The only difference in the Apache configuration
     for` workers.properties` for horizontal and vertical
@@ -1153,7 +1153,7 @@ following steps:
 
 
     
-    ### Note
+#### Note
 
     Include` conf/mod_jk.conf` in the end
     of` httpd.conf`.
@@ -1196,7 +1196,7 @@ process works:
     cluster class will start up a membership service.
 
     
-    ### Note
+#### Note
 
 
     The membership service is a mechanism in the cluster instance
@@ -1212,7 +1212,7 @@ process works:
     exists in the cluster, which is now tomcatinstance2.
 
     
-    ### Note
+#### Note
 
     In case the Tomcat instance does not respond within an interval of
     60 seconds, then Tomcat instance 2 will update the cluster, and
