@@ -45,7 +45,7 @@ We can directly install the Apache package in Debain Linux (Ubuntu),
 using the` apt-get` command. The following command shows the
 syntax for the installation:
 
-`sudo apt-get install apache2`
+`sudo apt-get install -y apache2`
 
 
 It is necessary to start the
@@ -80,7 +80,7 @@ Let's change the default Apache port. Open `/etc/apache2/ports.conf` in vscode a
 
 #### How to configure the virtual host
 
-Now we need to configure our virtual host to listen to the new port. Open the virtual host file using vscode: `/etc/apache/sites-enabled/000-default.conf`
+Now we need to configure our virtual host to listen to the new port. Open the virtual host file using vscode: `/etc/apache2/sites-enabled/000-default.conf`
 
 
 At the top of the file, you'll see the beginning of the directive:
@@ -95,7 +95,7 @@ Change that line to:
 
 Restart Apache with the command:
 
-`sudo systemctl restart apache2`
+`service apache2 restart`
 
 
 Once you start Apache, it\'s very important to verify the instance  status. You can verify the system using the `ps` command:
@@ -127,10 +127,10 @@ Syntax OK
 
 
 
-How To Use Apache as a Reverse Proxy with mod\_proxy
-====================================================
+Apache as a Reverse Proxy with mod\_proxy
+==========================================
 
-### Introduction
+#### Introduction
 
 A *reverse proxy* is a type of proxy server that takes HTTP(S) requests
 and transparently distributes them to one or more backend servers.
@@ -150,7 +150,7 @@ too.
 In this lab, you’ll set up Apache as a basic reverse proxy using
 the `mod_proxy` extension to redirect incoming connections to one or
 several backend servers running on the same network. This lab uses
-a sample applcation that was deployed using tomcat in previous lab.
+a sample application that was deployed using tomcat in previous lab.
 
 
 **Steps:**
@@ -205,13 +205,11 @@ you already have your own backend application(s), you can skip to Step 3.
 Step 2 — Verify Sample Application Status
 -----------------------------------------
 
-
-You can test that the appication is running using `curl`. Test the server:
+Verify sample tomcat application is running that we deployed in last lab using `curl`. Test the server:
 
 ``` {.code-pre .command .prefixed .language-bash}
 curl http://127.0.0.1:8080/
 ```
-
 
 In the next step, we’ll modify Apache’s configuration file to enable its
 use as a reverse proxy.
@@ -234,7 +232,7 @@ text editor.
 
 
 Inside that file, you will find the `<VirtualHost *:80>` block starting
-on the first line. The  example below explains how to configure
+on the first line. The example below explains how to configure
 this block to reverse proxy for a  backend server
 
 #### Reverse Proxying a Backend Server
@@ -245,7 +243,7 @@ so your configuration file looks like this:
 /etc/apache2/sites-available/000-default.conf
 
 ``` {.code-pre .language-bash}
-<VirtualHost *:80>
+<VirtualHost *:81>
     ProxyPreserveHost On
 
     ProxyPass / http://127.0.0.1:8080/
@@ -275,7 +273,7 @@ There are three directives here:
 To put these changes into effect, restart Apache.
 
 ``` {.code-pre .command .prefixed .language-bash}
-sudo systemctl restart apache2
+service apache2 restart
 ```
 
 
