@@ -892,7 +892,7 @@ is used:
         <Transport className= "org.apache.catalina.tribes.transport.nio. PooledParallelSender"/>
         </Sender>
         </Channel>
-        <Deployer className="org.apache.catalina.ha.deploy. FarmWarDeployer" tempDir="/opt/apachetomcat1/tomcat7-temp/" deployDir="/opt/apachetomcat1/tomcat7-deploy/" watchDir="/opt/apachetomcat1/tomcat7-listen/" watchEnabled="false"/>
+        <Deployer className="org.apache.catalina.ha.deploy. FarmWarDeployer" tempDir="/opt/apachetomcat1/tomcat8-temp/" deployDir="/opt/apachetomcat1/tomcat8-deploy/" watchDir="/opt/apachetomcat1/tomcat8-listen/" watchEnabled="false"/>
         <ClusterListener className= "org.apache.catalina.ha.session.ClusterSessionListener"/>
         </Cluster>
         ```

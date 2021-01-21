@@ -1,5 +1,3 @@
-
-
 <img align="right" src="./logo.png">
 
 
@@ -40,6 +38,8 @@ reasons:
 rules are in the form of servlet classes.
 
 
+Installation of the Apache Server
+---------------------------------
 
 We can directly install the Apache package in Debain Linux (Ubuntu),
 using the` apt-get` command. The following command shows the
@@ -47,20 +47,12 @@ syntax for the installation:
 
 `sudo apt-get install apache2`
 
-Also, you can install the Apache using the` yum` utility. This
-utility is used mainly in CentOS using the command:
-
-`yum -y install httpd`
-
-
-
 
 It is necessary to start the
     services of HTTP to verify the instance is properly installed. The
     best way to check the configuration is by running the configtest
     script. This script comes by default with Apache httpd, only in a
     non-DOS environment. The script can be found in APACHE\_HOME/bin.
-
 
 
 ```
@@ -78,31 +70,18 @@ Syntax OK
 ```
 
 
-- Once you start Apache, it\'s very important to verify the instance
-    status. You can verify the system using the `ps` command:
-
-
-
-```
-ps -ef |grep apache2
-```
+<span style="color:red;">Note: You will get and error because port 80 is already in use. We will change the port in the next step.</span>
 
 
 
 #### Change Apache Port
 
-The first thing we'll do is add to the default listening Apache port. To do this, log in to your Linux server and issue one of the following commands:
-
-For Ubuntu/Debian-based servers - sudo nano /etc/apache2/ports.conf
-
-In the now-open file update 80 with 8081. Save and close the file.
+Let's change the default Apache port. Open `/etc/apache2/ports.conf` in vscode and update `80` with port `81`. Save and close the file.
 
 #### How to configure the virtual host
 
-Now we need to configure our virtual host to listen to the new port. I'll demonstrate with the default virtual host, but you can modify this to fit any virtual host you've added to Apache. Open the virtual host file with the command:
+Now we need to configure our virtual host to listen to the new port. Open the virtual host file using vscode: `/etc/apache/sites-enabled/000-default.conf`
 
-sudo nano /etc/apache/sites-enabled/000-default.conf
-For Red Hat-based systems, the virtual host files are found in /etc/httpd/conf.d/.
 
 At the top of the file, you'll see the beginning of the directive:
 
@@ -111,16 +90,23 @@ At the top of the file, you'll see the beginning of the directive:
 
 Change that line to:
 
-`<VirtualHost *:8081>`
-
-
+`<VirtualHost *:81>`
 
 
 Restart Apache with the command:
 
 `sudo systemctl restart apache2`
 
-You should now be able to point a browser to http://localhost:8081 (Where localhost is the IP address of the hosting server) to see the Apache welcome site or the welcome page of your virtual host.
+
+Once you start Apache, it\'s very important to verify the instance  status. You can verify the system using the `ps` command:
+
+
+```
+ps -ef |grep apache2
+```
+
+
+You should now be able to point a browser to http://localhost:81 (Where localhost is the IP address of the hosting server) to see the Apache welcome site or the welcome page of your virtual host.
 
 
 ```
@@ -248,11 +234,10 @@ text editor.
 
 
 Inside that file, you will find the `<VirtualHost *:80>` block starting
-on the first line. The first example below explains how to configure
-this block to reverse proxy for a single backend server, and the second
-sets up a load balanced reverse proxy for multiple backend servers.
+on the first line. The  example below explains how to configure
+this block to reverse proxy for a  backend server
 
-### Example 1 — Reverse Proxying a Single Backend Server
+#### Reverse Proxying a Backend Server
 
 Replace all the contents within `VirtualHost` block with the following,
 so your configuration file looks like this:
