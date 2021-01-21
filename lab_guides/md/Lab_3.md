@@ -403,17 +403,13 @@ JMAP:
 
 ![](./images/3.PNG)
 
-### Note
-
-For more information on the JMAP command, please visit
-<http://docs.oracle.com/javase/6/docs/technotes/tools/share/jmap.html>.
 
 
 ##### Syntax for jmap
 
 
 The syntax for using the jmap command
-is` ./jmap -heap <process id>` where`<process id>`
+is` jmap -heap <process id>` where`<process id>`
 is the Java process for which we want to check the memory.
 
 
@@ -422,18 +418,12 @@ summary, the GC algorithm used, the heap configuration, and the
 generation-wise heap usage.
 
 
-### Note
-
-If you want to run the` jmap` command for a 64 bit VM, then
-use the command` jmap -J-d64 -heap pid`.
-
-
 In our current scenario, the PID is 4306:
 
 
 
 ```
-[root@localhost bin]# ./jmap -heap 4306
+[root@localhost bin]# jmap -heap 4306
 ```
 
 

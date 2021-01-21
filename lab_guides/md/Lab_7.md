@@ -501,10 +501,8 @@ processes:
 
 There are some chances where the JVM is over utilized in the
 application. To view the memory allocation for the JVM instance, you can
-use the command-line utility,` jmap`. This command comes with
-JDK 1.6. It\'s a Java utility, which determines the entire memory
+use the command-line utility,` jmap`. It\'s a Java utility, which determines the entire memory
 allocation of the Tomcat instance.
-
 
 
 ```

@@ -408,18 +408,6 @@ datasource configuration of Tomcat.
     <http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-10201-088211.html>.
 
 
-    
-#### Note
-
-    In case you have installed the Oracle database version 9i, then you
-    should use the` oracle.jdbc.driver.OracleDriver` class for
-    JDBC connections, and for versions above 9i, you should
-    use` oracle.jdbc.OracleDriver`
-    class.` oracle.jdbc.driver.OracleDriver` is deprecated and
-    support for this driver will be discontinued from the next major
-    release.
-
-
 3.  It\'s always mandatory to define the Document Type Definition (DTD)
     for the resource in the application web.xml. There is always a
     question that comes to the mind of the administrator, why can\'t we
@@ -654,7 +642,6 @@ Manager.
 
 Before enabling the Tomcat Manager, an authentication window will pop-up
 while browsing the Tomcat page, as shown in the following screenshot:
-
 
 
 ![](./images/6624_02_07.jpg)

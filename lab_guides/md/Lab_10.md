@@ -288,13 +288,6 @@ common approach used in any IT industry.
 
 ### Prerequisites for Tomcat 8
 
-
-By default, Tomcat 6 runs on JDK 1.5 and Tomcat 8 requires JDK 1.6, so
-the major prerequisite for the Tomcat 8 upgrade is the installation of
-JDK 1.6. In *Installation of Tomcat 8*, we have discussed the detailed
-steps of the Java installation. Hence, we will move on to the next
-installation step.
-
 In case you have to install Tomcat 8 on the same system where Tomcat 6
 is running, then you must be thinking how is it possible to set the two
 different` JAVA_HOME` or` Path?` In that case, you
@@ -306,7 +299,7 @@ should have sudo access to run the Tomcat service.
 ### Installation of Tomcat 8 for the upgrade
 
 
-Once you are done with the installation and configuration of JDK 1.6 on
+Once you are done with the installation and configuration of JDK on
 the system, it\'s time to install Tomcat 8 on the machine. Perform the
 following steps:
 
@@ -523,7 +516,7 @@ latest JDBC driver for connecting the database.
 Application migration is very difficult and a tricky task in the upgrade
 life cycle. We cannot deploy the application directly. Some of the
 applications are not compatible with the new version of Tomcat 8 and
-also with JDK 1.6. In such a situation, we have to build and compile the
+also with JDK. In such a situation, we have to build and compile the
 application in the new version. It is a tricky issue when it comes to
 application deployment. We cannot directly point the errors without
 running the application in either TRACE or DEBUG mode. If we analyze the
