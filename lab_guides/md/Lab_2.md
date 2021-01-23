@@ -652,17 +652,20 @@ The following screenshot shows the` tomcat-users.xml` section
 before enabling the user properties:
 
 
-
-![](./images/6624_02_08.jpg)
-
+Open /opt/apache-tomcat-8.5.61/conf in vscode and add folloiwng lines in `tomcat-users.xml`. Add these line before `</tomcat-users>`
 
 
-After enabling the Tomcat Manager, the user will get a message in the
-command prompt, as shown in the following screenshot:
+----tomcat-users.xml------------------------------------------------------------------------
 
 
-
-![](./images/6624_02_09.jpg)
+```
+<role rolename="manager-gui"/>
+<role rolename="manager-script"/>
+<role rolename="manager-status"/>
+<role rolename="manager-jmx"/>
+<user username="tomcat" password="password"
+  roles="manager-gui, manager-jmx, manager-script, manager-status"/>
+```
 
 
 

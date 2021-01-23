@@ -668,7 +668,7 @@ and redirects the output in a text file:
 
 
 ```
-jstack -f Pid > threaddump.txt
+jstack -F Pid > threaddump.txt
 ```
 
 
@@ -677,18 +677,11 @@ For example:
 
 
 ```
-jstack -f 10638 > threaddump.txt
+jstack -F 10638 > threaddump.txt
 ```
 
 
 
-### Note
-
-
-**JStack on a 64 bit OS:** If you are using a 64 bit
-operating system, then you have to run
-the` jstack -J-d64 -m pid` command to generate the thread
-dump.
 
 **JStack on Windows:** On the Windows system, only one switch
 will work, and that is,` jstack [-l] pid`.
@@ -993,7 +986,7 @@ time of startup of Tomcat 8.
 
 
 ```
--XX:MaxPermSize=(MemoryValue)m
+-XX:MaxMetaspaceSize=(MemoryValue)m
 ```
 
 
@@ -1002,7 +995,7 @@ For example:
 
 
 ```
--XX:MaxPermSize=128m
+-XX:MaxMetaspaceSize=128m
 ```
 
 

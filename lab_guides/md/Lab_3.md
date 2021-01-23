@@ -430,56 +430,54 @@ In our current scenario, the PID is 4306:
 The output of the previous command is as follows:
 
 
-
 ```
 Attaching to process ID 4306, please wait...
 Debugger attached successfully.
-Client compiler detected.
-JVM version is 19.1-b02
+Server compiler detected.
+JVM version is 25.275-b01
+
 using thread-local object allocation.
-Mark Sweep Compact GC
+Parallel GC with 2 thread(s)
+
 Heap Configuration:
-MinHeapFreeRatio = 40
-MaxHeapFreeRatio = 70
-MaxHeapSize = 268435456 (256.0MB)
-NewSize = 1048576 (1.0MB)
-MaxNewSize = 4294901760 (4095.9375MB)
-OldSize = 4194304 (4.0MB)
-NewRatio = 2
-SurvivorRatio = 8
-PermSize = 12582912 (12.0MB)
-MaxPermSize = 67108864 (64.0MB)
+   MinHeapFreeRatio         = 0
+   MaxHeapFreeRatio         = 100
+   MaxHeapSize              = 4204789760 (4010.0MB)
+   NewSize                  = 88080384 (84.0MB)
+   MaxNewSize               = 1401421824 (1336.5MB)
+   OldSize                  = 176160768 (168.0MB)
+   NewRatio                 = 2
+   SurvivorRatio            = 8
+   MetaspaceSize            = 21807104 (20.796875MB)
+   CompressedClassSpaceSize = 1073741824 (1024.0MB)
+   MaxMetaspaceSize         = 17592186044415 MB
+   G1HeapRegionSize         = 0 (0.0MB)
+
 Heap Usage:
-New Generation (Eden + 1 Survivor Space):
-capacity = 5111808 (4.875MB)
-used = 3883008 (3.703125MB)
-free = 1228800 (1.171875MB)
-75.96153846153847% used
+PS Young Generation
 Eden Space:
-capacity = 4587520 (4.375MB)
-used = 3708360 (3.5365676879882812MB)
-free = 879160 (0.8384323120117188MB)
-80.83583286830357% used
+   capacity = 66060288 (63.0MB)
+   used     = 18526320 (17.668075561523438MB)
+   free     = 47533968 (45.33192443847656MB)
+   28.044564383370535% used
 From Space:
-capacity = 524288 (0.5MB)
-used = 174648 (0.16655731201171875MB)
-free = 349640 (0.33344268798828125MB)
-33.31146240234375% used
+   capacity = 11010048 (10.5MB)
+   used     = 10996848 (10.487411499023438MB)
+   free     = 13200 (0.0125885009765625MB)
+   99.88010951450893% used
 To Space:
-capacity = 524288 (0.5MB)
-used = 0 (0.0MB)
-free = 524288 (0.5MB)
-0.0% used
-tenured generation:
-capacity = 11206656 (10.6875MB)
-used = 3280712 (3.1287307739257812MB)
-free = 7925944 (7.558769226074219MB)
-29.274673908077485% used
-Perm Generation:
-capacity = 12582912 (12.0MB)
-used = 6639016 (6.331459045410156MB)
-free = 5943896 (5.668540954589844MB)
-52.762158711751304% used
+   capacity = 11010048 (10.5MB)
+   used     = 0 (0.0MB)
+   free     = 11010048 (10.5MB)
+   0.0% used
+PS Old Generation
+   capacity = 176160768 (168.0MB)
+   used     = 397224 (0.37882232666015625MB)
+   free     = 175763544 (167.62117767333984MB)
+   0.2254894801548549% used
+
+14579 interned Strings occupying 1336000 bytes.
+
 ```
 
 
@@ -503,14 +501,13 @@ To increase the heap size for Tomcat 8, we need to add
 the` JAVA_OPTS` parameter in` catalina.sh`, which
 can be found in` TOMCAT_HOME/bin`.
 
-Let us take an example of increasing the max heap size to 512 MB instead
-256 MB. Also setting the` Perm Gen = 256 MB`.
+Let us take an example of increasing the max heap size to 512 MB. Also setting the` MaxMetaspaceSize = 256 MB`.
 
 
 
 
 ```
-JAVA_OPTS="-Xms128m -Xmx512m -XX:MaxPermSize=256m"
+JAVA_OPTS="-Xms128m -Xmx512m -XX:MaxMetaspaceSize=256m"
 ```
 
 
@@ -532,25 +529,30 @@ the JVM parameter by running the` jmap` command.
 The output of the previous command is as follows:
 
 
-
 ```
+
 Attaching to process ID 21091, please wait...
 Debugger attached successfully.
-Client compiler detected.
-JVM version is 19.1-b02
+Server compiler detected.
+JVM version is 25.275-b01
+
 using thread-local object allocation.
-Mark Sweep Compact GC
+Parallel GC with 2 thread(s)
+
 Heap Configuration:
-MinHeapFreeRatio = 40
-MaxHeapFreeRatio = 70
-MaxHeapSize = 536870912 (512.0MB)
-NewSize = 1048576 (1.0MB)
-MaxNewSize = 4294901760 (4095.9375MB)
-OldSize = 4194304 (4.0MB)
-NewRatio = 2
-SurvivorRatio = 8
-PermSize = 12582912 (12.0MB)
-MaxPermSize = 268435456 (256.0MB)
+   MinHeapFreeRatio         = 0
+   MaxHeapFreeRatio         = 100
+   MaxHeapSize              = 536870912 (512.0MB)
+   NewSize                  = 44564480 (42.5MB)
+   MaxNewSize               = 178782208 (170.5MB)
+   OldSize                  = 89653248 (85.5MB)
+   NewRatio                 = 2
+   SurvivorRatio            = 8
+   MetaspaceSize            = 21807104 (20.796875MB)
+   CompressedClassSpaceSize = 260046848 (248.0MB)
+   MaxMetaspaceSize         = 268435456 (256.0MB)
+   G1HeapRegionSize         = 0 (0.0MB)
+
 ```
 
 
