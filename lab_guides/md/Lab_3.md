@@ -151,7 +151,7 @@ JSP/servlet.
 
 
 For more information on the HTTP Connector, please visit
-<http://tomcat.apache.org/tomcat-7.0-doc/config/http.html>.
+<http://tomcat.apache.org/tomcat-8.0-doc/config/http.html>.
 
 
 #### Java AJP Connector
@@ -168,7 +168,7 @@ mod\_jk, mod \_proxy, and so on.
 ### Note
 
 For more information on AJP Connectors, please visit the URL
-<http://tomcat.apache.org/tomcat-7.0-doc/config/ajp.html>.
+<http://tomcat.apache.org/tomcat-8.0-doc/config/ajp.html>.
 
 
 #### APR (AJP/HTTP) Connector
@@ -185,7 +185,7 @@ than being absorbed on backend technology.
 ### Note
 
 For more details on the APR Connector, please visit the link
-<http://tomcat.apache.org/tomcat-7.0-doc/apr.html>.
+<http://tomcat.apache.org/tomcat-8.0-doc/apr.html>.
 
 
 
