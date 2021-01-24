@@ -605,8 +605,8 @@ The following screenshot shows the pause operation successfully invoked for the 
 ![](./images/43.PNG)
 
 
-**Note:** Open ` http://localhost:8080`. We then find the Tomcat welcome
-page is not being displayed, run `Resume` function and check again.
+**Note:** Open ` http://localhost:8080`. Verify that the Tomcat welcome
+page is not being displayed after running `Pause` Operation , run `Resume` function and check again.
 
 
 
