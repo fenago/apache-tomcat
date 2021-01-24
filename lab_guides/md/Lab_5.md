@@ -470,99 +470,79 @@ certificates, which are explained as follows:
     the signed certificate and send it to us.
 
 
-### Process of installing SSL
-
-
-The process of installing SSL varies for every server, but there are
-certain parameters which are common to every server for generation of
-the **Certificate Signing Request** (**CSR**). The
-method of generating the CSR may vary, but information required for
-generating the CSR remains the same. The following table provides the
-CSR template:
-
-![](./images/11.PNG)
-
-### Note
-
-
-Common name: It is the hostname for which CSR needs to be generated.
-
-Key size: It is the size of the encryption keys.
+### Self-signed certificate
 
 
 Let\'s do a real-time implementation for installation of the SSL
-certificate on Tomcat 8. We will install SSL certificate for
-host` tomcat8fenago.com` in Tomcat 8 by performing the
-following steps:
-
-
-1.  Create a CSR template for the tomcat8fenago.com.
-
-![](./images/12.PNG)
-
-2.  We need to create the CSR for the host tomcat8fenago.com. For
-    creating the CSR, we need to run the keytool present in
-    JAVA\_HOME/bin. The following command will capture parameters for
-    the CSR:
-
+certificate. We will install SSL certificate for
+`localhost` in Tomcat 8:
 
     ```
     [root@localhost conf] # cd /opt/apache-tomcat-8.5.61/conf
-    [root@localhost conf] # keytool -genkey -alias tomcat8 -keyalg RSA -keysize 2048 -keystore tomcat8.jks
-    ```
-
-![](./images/62.PNG)
-
-
-3.  Generate the certificate in CSR format using the following command.
-    It will ask for the password and send it to the respective vendor
-    for signed certificate creation.
+    [root@localhost conf] # keytool -genkey -keyalg RSA -noprompt -alias tomcat -dname "CN=localhost, OU=NA, O=NA, L=NA, S=NA, C=NA" -keystore keystore.jks -validity 9999 -storepass tomcat8 -keypass tomcat8
 
     ```
-    [root@localhost conf]# keytool -certreq -alias tomcat8 -file csr.txt -keystore tomcat.jks
-    Enter keystore password:
-    ```
+
+This generates a keystore.jks file with a password of **tomcat8** using a keyAlias of tomcat that's valid for 9999 days for localhost.
 
 
-4.  Import the certificate to the following Tomcat key store. Copy the
-    tomcat8.jks in the TOMCAT\_HOME/conf.
+![](./images/cert1.PNG)
 
-    ```
-    [root@localhost conf] # keytool -import -trustcacerts -alias tomcat8 -file tomcat8fenago.com.pb7 tomcat8.jks
-    ```
 
-Once you have signed the certificate created now, it\'s time to make
-changes in the Tomcat configuration.
+Once you have create the jks file, it\'s time to make changes in the Tomcat configuration.
 
 
 1.  Open server.xml and change the settings, as in the following code
     snippet:
 
     ```
-    <Connector port="8443" protocol="HTTP/1.1"
-    acceptCount="100" scheme="https" secure="true" SSLEnabled="true" 
-    clientAuth="false" sslProtocol="TLS" keyAlias="tomcat8" keystoreFile="conf/tomcat8.jks" keystorePass="tomcat8" />
+    <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+               maxThreads="150" SSLEnabled="true">
+        <SSLHostConfig>
+            <Certificate certificateKeyAlias="tomcat"
+                         certificateKeystoreFile="conf/keystore.jks"
+                         certificateKeystorePassword="tomcat8"  
+                         type="RSA" />
+        </SSLHostConfig>
+    </Connector>
     ```
+
+![](./images/cert2.PNG)
+
 
 
 2.  Save the server.xml and restart the Tomcat services.
 
 3.  Once the installation is done, the next step is to verify the SSL.
-    You can access the application using the URL https://yoursitename or
-    https://localhost:8443. Here, we have not created the signed
+    You can access the application using the URL `https://<lab-environment-url>:8443` or
+    https://localhost:8443. 
+
+
+    Note: Make sure to use https in the url.
+
+![](./images/cert3.PNG)
+
+
+**Note:** Midori browser installed in the lab environment will not allow to access self signed certificate url. Use chrome for localhost or directly access browser port 8443 with lab environment FQDN.
+
+
+4.  If you click on Details, it shows that your certificate is
+    successfully installed, as shown in the following screenshot:
+
+
+![](./images/cert4.PNG)
+
+
+We have not created the signed
     certificate as it is a paid service, but we can use www.gmail.com as
     an example, which also uses SSL. Hit the URL, once the page is
     loaded, you will see the SSL icon. Click on it to view the
     certificate details, as shown in the following screenshot:
 
 
+
 ![](./images/29.PNG)
 
-
-4.  If you click on Details, it shows that your certificate is
-    successfully installed, as shown in the following screenshot:
-
-    
 
 Summary
 
