@@ -508,7 +508,7 @@ following steps:
 
     ```
     [root@localhost conf] # cd /opt/apache-tomcat-8.5.61/conf
-    [root@localhost conf] # keytool -genkey -alias tomcat8 -keyalg RSA -keysize 2048 -keystore tomcat.jks
+    [root@localhost conf] # keytool -genkey -alias tomcat8 -keyalg RSA -keysize 2048 -keystore tomcat8.jks
     ```
 
 ![](./images/62.PNG)
