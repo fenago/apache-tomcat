@@ -397,16 +397,6 @@ datasource configuration of Tomcat.
     CATALINA\_HOME/lib/ folder of the Tomcat instance. For Oracle,
     either class 12.jar or ojdbc14.jar is used.
 
-    
-#### Note
-
-    By default, Tomcat accepts only` *.jar`. If the driver is
-    in ZIP format, then rename it to` .jar` and then deploy it
-    in the` jar` directory. Based on the version used in the
-    environment, you can download the Oracle JAR for free using the
-    link,
-    <http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-10201-088211.html>.
-
 
 3.  It\'s always mandatory to define the Document Type Definition (DTD)
     for the resource in the application web.xml. There is always a
@@ -438,56 +428,24 @@ datasource configuration of Tomcat.
 
 MySQL is one of the biggest open source databases currently supported by
 Oracle. It follows the same process as Oracle, but a few parameters
-vary. The following steps are to be performed to configure the
-datasource for MySQL:
+vary. 
 
 
-1.  The following lines of code provide the definition of datasource in
-    server.xml By default, these values are defined in the global
-    section.
+1. MySQL configuration
 
-    ```
-    <Resource name="jdbc/tomcat8" auth="Container" type="javax.sql.DataSource"
-    maxActive="100" maxIdle="30" maxWait="10000" username="tomcatuser" password="tomcat" driverClassName="com.mysql.jdbc.Driver"
-    url="jdbc:mysql://localhost:3306/tomcat8"/>
-    ```
+Ensure that you follow these instructions as variations can cause problems.
+
+Create a new test user, a new database and a single test table. Your MySQL user must have a password assigned. The driver will fail if you try to connect with an empty password.
+
+Make sure that mysql server is running and login as root:
 
 
-2.  The following lines of code provide the web.xml configuration for
-    the application. This should be placed on the WEB-INF/web.xml for
-    the application-specific content.
+`service mysql status`
 
-    ```
-    <web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
-    version="2.4">
-    <description>Tomcat 8 test DB</description>
-    <resource-ref>
-    <description>DB Connection</description>
-    <res-ref-name>jdbc/tomcat8</res-ref-name>
-    <res-type>javax.sql.DataSource</res-type>
-    <res-auth>Container</res-auth>
-    </resource-ref>
-    </web-app>
-    ```
-
-
-3.  The MySQL JDBC driver is deployed in the CATALINA\_HOME/lib/ folder
-    of Tomcat. MySQL 3.23.47 or Connector/J 3.0.11-stable are the most
-    common and widely used JAR files.
-
-
-4.  One of the most important points which the Tomcat administrator
-    should keep in mind is that, in MySQL, the DB should be configured
-    with all privileges for the DB server user.Make sure that mysql server is running and login as root:
-
-
-    `service mysql status`
-
-    `service mysql start`
+`service mysql start`
 
     
-    Log in to the MySQL prompt and run the following command to grant the permissions: `mysql`
+Log in to the MySQL prompt and run the following command to grant the permissions: `mysql`
 
 
     ```
@@ -500,7 +458,99 @@ datasource for MySQL:
     ```
 
 
-    
+![](./images/db1.PNG)
+
+<span style="color:red;">Lab Solution</span>
+
+Complete solution for this lab is available at `~/Desktop/apache-tomcat/02_Code/DBTest`.
+Run `cp -r ~/Desktop/apache-tomcat/02_Code/DBTest /opt/apache-tomcat-8.5.61/webapps` to copy solution and start tomcat. Application URL: http://localhost:8080/DBTest/test.jsp
+
+
+![](./images/db2.PNG)
+
+
+2. Context configuration
+
+Configure the JNDI DataSource in Tomcat by adding a declaration for your resource to your Context.
+
+For example:
+
+```
+<Context>
+
+
+  <Resource name="jdbc/TestDB" auth="Container" type="javax.sql.DataSource"
+               maxTotal="100" maxIdle="30" maxWaitMillis="10000"
+               username="javauser" password="javadude" driverClassName="com.mysql.jdbc.Driver"
+               url="jdbc:mysql://localhost:3306/javatest"/>
+
+</Context>
+```
+
+3. web.xml configuration
+
+Now create a WEB-INF/web.xml for this test application.
+
+```
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+  <description>MySQL Test App</description>
+  <resource-ref>
+      <description>DB Connection</description>
+      <res-ref-name>jdbc/TestDB</res-ref-name>
+      <res-type>javax.sql.DataSource</res-type>
+      <res-auth>Container</res-auth>
+  </resource-ref>
+</web-app>
+```
+
+
+4. Test code
+
+Now create a simple test.jsp page for use later.
+
+```
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<sql:query var="rs" dataSource="jdbc/TestDB">
+select id, foo, bar from testdata
+</sql:query>
+
+<html>
+  <head>
+    <title>DB Test</title>
+  </head>
+  <body>
+
+  <h2>Results</h2>
+
+<c:forEach var="row" items="${rs.rows}">
+    Foo ${row.foo}<br/>
+    Bar ${row.bar}<br/>
+</c:forEach>
+
+  </body>
+</html>
+```
+
+Finally deploy your web app into $CATALINA_BASE/webapps into a sub-directory called DBTest.
+
+Once deployed, point a browser at http://localhost:8080/DBTest/test.jsp to view the results of your hard work.
+
+Insert new row and open `http://localhost:8080/DBTest/test.jsp` again to verify that data is available in the web application.
+
+
+    ```
+    mysql> insert into testdata values(null, 'fenago', 123);
+    ```
+
+![](./images/db3.PNG)
+
+
 #### Note
 
     If you create the MySQL user without password, then the JDBC driver
