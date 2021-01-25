@@ -651,14 +651,6 @@ steps are mentioned as follows:
 
 
 
-### Note
-
-
-For Samurai, check the link
-<http://yusuke.homeip.net/samurai/en/index.html>.
-
-
-
 ### Thread dump analysis using Samurai
 
 
