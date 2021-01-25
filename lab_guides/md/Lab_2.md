@@ -469,6 +469,7 @@ Run `cp -r ~/Desktop/apache-tomcat/02_Code/DBTest /opt/apache-tomcat-8.5.61/weba
 ![](./images/db2.PNG)
 
 
+
 2. Context configuration
 
 Configure the JNDI DataSource in Tomcat by adding a declaration for your resource to your Context.
@@ -476,15 +477,19 @@ Configure the JNDI DataSource in Tomcat by adding a declaration for your resourc
 For example:
 
 ```
+<?xml version="1.0" encoding="UTF-8"?>
+
+
 <Context>
 
-
-  <Resource name="jdbc/TestDB" auth="Container" type="javax.sql.DataSource"
+  <Resource name="jdbc/tomcat8" auth="Container" type="javax.sql.DataSource"
                maxTotal="100" maxIdle="30" maxWaitMillis="10000"
-               username="javauser" password="javadude" driverClassName="com.mysql.jdbc.Driver"
-               url="jdbc:mysql://localhost:3306/javatest"/>
+               username="tomcatuser" password="tomcat8" driverClassName="com.mysql.jdbc.Driver"
+               url="jdbc:mysql://localhost:3306/tomcat8"/>
 
 </Context>
+
+
 ```
 
 3. web.xml configuration
@@ -492,6 +497,8 @@ For example:
 Now create a WEB-INF/web.xml for this test application.
 
 ```
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
 <web-app xmlns="http://java.sun.com/xml/ns/j2ee"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
@@ -500,7 +507,7 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
   <description>MySQL Test App</description>
   <resource-ref>
       <description>DB Connection</description>
-      <res-ref-name>jdbc/TestDB</res-ref-name>
+      <res-ref-name>jdbc/tomcat8</res-ref-name>
       <res-type>javax.sql.DataSource</res-type>
       <res-auth>Container</res-auth>
   </resource-ref>
@@ -516,7 +523,7 @@ Now create a simple test.jsp page for use later.
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<sql:query var="rs" dataSource="jdbc/TestDB">
+<sql:query var="rs" dataSource="jdbc/tomcat8">
 select id, foo, bar from testdata
 </sql:query>
 
