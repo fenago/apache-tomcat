@@ -476,23 +476,27 @@ datasource for MySQL:
     of Tomcat. MySQL 3.23.47 or Connector/J 3.0.11-stable are the most
     common and widely used JAR files.
 
-    
-#### Note
-
-    You can download the MySQL JAR freely from the open source website,
-    <http://dev.mysql.com/downloads/>.
-
 
 4.  One of the most important points which the Tomcat administrator
     should keep in mind is that, in MySQL, the DB should be configured
-    with all privileges for the DB server user. Log in to the MySQL
-    prompt and run the following command to grant the
+    with all privileges for the DB server user.Make sure that mysql server is running and login as root:
+
+
+    `service mysql status`
+
+    `service mysql start`
+
+    
+    Log in to the MySQL prompt and run the following command to grant the permissions: `mysql`
+
 
     ```
-    mysql> GRANT ALL PRIVILEGES ON *.* TO tomcatuser@localhost IDENTIFIED BY 'tomcat8' WITH GRANT OPTION;
+    mysql> CREATE USER 'tomcatuser'@'localhost' IDENTIFIED BY 'tomcat8';
+    mysql> GRANT ALL PRIVILEGES ON *.* TO 'tomcatuser'@'localhost' WITH GRANT OPTION;
     mysql> create database tomcat8;
     mysql> use tomcat8;
     mysql> create table testdata ( id int not null auto_increment primary key,foo varchar(25), bar int);
+    mysql> insert into testdata values(null, 'hello', 12345);
     ```
 
 
